@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "TFU9+WYLJuNb8B8HU6sUEvBGqvMU8vRVgMpEKgz0RWX+Y1CwKiT5gsByj2lxrGjEhhHOREROSpuUwVOUzJTNVw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\SuperStar\\source\\repos\\WpfDaiNet\\WpfDaiNet\\WpfDaiNet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SuperStar\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\SuperStar\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\SuperStar\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

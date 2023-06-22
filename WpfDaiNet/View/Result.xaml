@@ -1,0 +1,72 @@
+﻿<Window x:Class="WpfDaiNet.Result"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDaiNet"
+        mc:Ignorable="d"
+        Title="Result" Height="600" Width="1050">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Image Source="{Binding Path=ImagePath}" Stretch="Uniform" />
+            </Grid>
+        </ScrollViewer>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Column="0" Content="Objects" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Tahoma" FontSize="16" />
+                <TextBox IsReadOnly="true" Text="{Binding ObjectsNumber}" Grid.Column="1"  Width="80" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Tahoma" FontSize="16" FontWeight="Normal" TextAlignment="Center"/>
+                <Label  Grid.Column="2" Content="Clusters" VerticalAlignment="Center" Margin="10,0,0,0" FontFamily="Tahoma" FontSize="16" />
+                <TextBox Text="{Binding N}"  Grid.Column="3" Width="50" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Tahoma" FontSize="16" FontWeight="Normal" TextAlignment="Center"/>
+                <Label  Grid.Column="4" Content="K" VerticalAlignment="Center" Margin="20,0,0,0" FontFamily="Tahoma" FontSize="16" />
+                <TextBox Text="{Binding K}"  Grid.Column="5" Width="50" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Tahoma" FontSize="16" FontWeight="Normal" TextAlignment="Center"/>
+                <Label  Grid.Column="6" Content="Iterations" VerticalAlignment="Center" Margin="20,0,0,0" FontFamily="Tahoma" FontSize="16" />
+                <TextBox Text="{Binding Limit}" Grid.Column="7" Width="60" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Tahoma" FontSize="16" FontWeight="Normal" TextAlignment="Center"/>
+                <Label Grid.Column="8" Content="Cloning" VerticalAlignment="Top" Margin="0,0,20,0" FontFamily="Tahoma" FontSize="16" />
+                <ComboBox Grid.Column="9" Width="Auto" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="16" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" IsEnabled="False">
+                    <ComboBoxItem Content="{Binding CloningType}" IsSelected="True" />
+                </ComboBox>
+
+                <Label Grid.Column="10" Content="Mutation" VerticalAlignment="Top" Margin="10,0,10,0" FontFamily="Tahoma" FontSize="16" />
+                <ComboBox Grid.Column="16" Width="Auto" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="16" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" OpacityMask="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" IsEnabled="False">
+                    <ComboBoxItem Content="{Binding MutationType}" IsSelected="True" />
+                </ComboBox>
+            </Grid>
+           </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="Clustering" Margin="20,0,30,0" FontFamily="Tahoma" FontSize="20" IsChecked="{Binding IsClustering}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <RadioButton Content="Simulation" FontFamily="Tahoma" FontSize="20" IsChecked="{Binding IsStimulation}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="60,0,0,0">
+                <Label Content="Delay, ms" VerticalAlignment="Center" Margin="0,0,20,0" FontFamily="Tahoma" FontSize="20" />
+                <TextBox Text="{Binding Delay}" x:Name="delayTextBox" Grid.Column="1" Width="80" Height="40" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Tahoma" FontSize="20" FontWeight="Normal" TextAlignment="Center"/>
+            </StackPanel>
+            <Label Content="{Binding Time}" Width="80" Height="40" VerticalAlignment="Center" Margin="80,0,0,0" FontFamily="Tahoma" FontSize="20" />
+            <Label Content="s" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="Tahoma" FontSize="20" />
+            <Button x:Name="startButton" IsEnabled="{Binding IsAllowedStart}" Command="{Binding StartCommand}" Content="Start" Height="40" Width="100" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Foreground="White" FontFamily="Tahoma" FontSize="20" Margin="100,10,20,10"/>
+            <Button x:Name="closeButton" Content="Close" Height="40" Width="100" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Foreground="White" FontFamily="Tahoma" FontSize="20" Click="closeButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
